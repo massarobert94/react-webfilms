@@ -5,15 +5,15 @@ import './App.css';
 import searchIcon from './search.svg';
 import Card from './Card.jsx';
 
-const api_url = 'http://www.omdbapi.com/?i=tt3896198&apikey=1caa1a0b';
+const api_url = 'https://www.omdbapi.com/?i=tt3896198&apikey=1caa1a0b';
 
-// const movie1 = {
-//     "Poster": "https://m.media-amazon.com/images/M/MV5BNzE1Njk0NmItNDhlMC00ZmFlLWI4ZTUtYTY4ZjgzNjkyMTU1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-//     "Title": "Clerks",
-//     "Type": "movie",
-//     "Year": "1994",
-//     "imdbID": "tt0109445"
-// }
+const movie1 = {
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNzE1Njk0NmItNDhlMC00ZmFlLWI4ZTUtYTY4ZjgzNjkyMTU1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "Title": "Clerks",
+    "Type": "movie",
+    "Year": "1994",
+    "imdbID": "tt0109445"
+}
 
 const App = () => {
 
@@ -25,7 +25,7 @@ const App = () => {
     }, []);
 
     const search = async (movieTitle) => {
-        const results = await fetch(`${api_url}&s=${movieTitle}`);
+        const results = await fetch(`${api_url}&t=${movieTitle}`);
         const resultsData = await results.json();
         setMovies(resultsData.Search);
     };
